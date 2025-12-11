@@ -3902,6 +3902,198 @@ font-size: 2rem;
   }
 }
 /* =========================================================
+   RESPONSIVE – HOME PAGE (Phones < 600px)
+   ========================================================= */
+@media (max-width: 600px) {
+
+  /* Main container */
+  .page-home .home-container {
+    padding: 14px 12px 18px;
+    border-radius: 20px;
+  }
+
+  /* Header */
+  .home-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .home-heading {
+    font-size: 1.25rem;
+  }
+
+  .home-lead {
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+
+  .home-header-meta {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* Grid collapses */
+  .home-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .home-left {
+    order: 2;
+  }
+
+  .home-right {
+    order: 1;
+    width: 100%;
+    display: flex;
+    gap: 18px;
+  }
+
+  /* Progress chart layout */
+  .progress-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .progress-side {
+    text-align: center;
+  }
+
+  .progress-ring-container {
+    width: 130px;
+    height: 130px;
+  }
+
+  .progress-percent {
+    font-size: 1.2rem;
+  }
+
+  /* Mood card */
+  .mood-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .mood-buttons {
+    gap: 10px;
+  }
+
+  .mood-buttons .mood {
+    width: 80px;
+    height: 80px;
+    opacity: 0.85;
+  }
+
+  /* Checklist */
+  .new-task-row {
+    grid-template-columns: 1fr;
+  }
+
+  .emoji-picker {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .emoji-picker::before {
+    display: none;
+  }
+
+  .task-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .task-card .task-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .task-card .time {
+    font-size: 0.7rem;
+  }
+
+  /* Chatbot button */
+  .chatbot-wrapper {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .chatbot-btn {
+    width: 55px;
+    height: 55px;
+  }
+
+  .chatbot-icon-img {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Chat window */
+  .chat-window {
+    width: 90vw;
+    height: 70vh;
+    left: 5vw;
+    bottom: 100px;
+    border-radius: 16px;
+  }
+
+  /* Mood orb */
+  .mood-orb {
+    width: 200px;
+  }
+
+  .mood-orb .mood-label {
+    font-size: 0.8rem;
+  }
+
+  /* Why Anah section */
+  .why-anah {
+    padding-block: 40px;
+  }
+
+  .why-anah h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Feature grid top section */
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE – SMALL PHONES (max-width: 400px)
+   ========================================================= */
+@media (max-width: 400px) {
+
+  .home-heading {
+    font-size: 1.1rem;
+  }
+
+  .progress-ring-container {
+    width: 115px;
+    height: 115px;
+  }
+
+  .mood-buttons .mood {
+    width: 70px;
+    height: 70px;
+  }
+
+  .task-card {
+    font-size: 0.8rem;
+  }
+
+  .chat-window {
+    height: 65vh;
+  }
+}
+/* =========================================================
    📱 MOBILE RESPONSIVE FIXES — INDEX / WELCOME PAGE
    ========================================================= */
 @media (max-width: 768px) {
