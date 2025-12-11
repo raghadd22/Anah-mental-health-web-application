@@ -3681,132 +3681,362 @@ font-size: 2rem;
     margin-bottom: 4px;
   }
 }
+/* ============================================
+   📱 MOBILE RESPONSIVE FIXES (max-width: 768px)
+   ============================================ */
+@media (max-width: 768px) {
 
-@media (max-width: 600px) {
+  /* Page wrapper */
+  .journal-main {
+    padding-block: 16px 40px;
+  }
 
-    /* ---------------------------
-        General layout fixes
-    ----------------------------*/
-    body {
-        padding: 0;
-        margin: 0;
-        overflow-x: hidden;
-    }
+  .journal-container {
+    width: 92%;
+    padding: 16px;
+    margin-top: 8px;
+    margin-bottom: 40px;
+    border-radius: 18px;
+  }
 
-    .auth-split {
-        flex-direction: column;
-        padding: 10px;
-    }
+  /* Header layout → stack vertically */
+  .journal-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 
-    .auth-card {
-        width: 100% !important;
-        margin: 0;
-        padding: 20px;
-        box-sizing: border-box;
-    }
+  .journal-header-top h1 {
+    font-size: 1.4rem;
+  }
 
-    .auth-image-panel {
-        display: none; /* hide big GIF on phones */
-    }
+  .journal-lead {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
 
-    /* ---------------------------
-        Forms (login/signup)
-    ----------------------------*/
-    .field .input input {
-        font-size: 16px !important;
-        padding: 12px !important;
-    }
+  /* GRID → COLUMN */
+  .journal-split-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
 
-    .auth-btn-main {
-        font-size: 18px;
-        padding: 12px;
-        width: 100%;
-    }
+  /* Sidebar & editor stretch full width */
+  .journal-sidebar,
+  .editor-card,
+  .journal-card {
+    width: 100%;
+  }
 
-    /* ---------------------------
-        Home page layout
-    ----------------------------*/
-    .home-container {
-        padding: 10px !important;
-    }
+  /* Rating stars resize */
+  .rating-stars button {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
 
-    .section {
-        margin: 15px 0 !important;
-    }
+  .rating-text {
+    font-size: 0.8rem;
+  }
 
-    .dashboard-card,
-    .journal-card {
-        width: 100% !important;
-        margin: 10px 0 !important;
-    }
+  /* Note area */
+  .note-area {
+    min-height: 140px;
+    font-size: 0.88rem;
+  }
 
-    /* ---------------------------
-        Journal page
-    ----------------------------*/
-    #note {
-        width: 100% !important;
-        height: 180px !important;
-        font-size: 15px;
-    }
+  /* Editor actions → stack */
+  .editor-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
 
-    .journal-actions {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
+  /* Entry cards */
+  .entry {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
 
-    /* ---------------------------
-        Checklist page (tasks)
-    ----------------------------*/
-    .task-card {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        gap: 10px;
-    }
+  .entry .meta {
+    font-size: 0.75rem;
+  }
 
-    .task-actions {
-        justify-content: center;
-        width: 100%;
-    }
+  /* Modal dialog */
+  .journal-modal-dialog {
+    width: 95%;
+    padding: 16px;
+    border-radius: 18px;
+  }
 
-    .task-actions button {
-        flex: 1;
-        margin: 5px 0;
-    }
+  .journal-modal-dialog::before {
+    left: 16px;
+    right: 16px;
+  }
 
-    #newTaskContainer {
-        width: 100% !important;
-    }
+  .journal-modal-content .view-body {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
 
-    /* Progress ring resizing */
-    .progress-ring {
-        width: 120px !important;
-        height: 120px !important;
-    }
+  /* Filters */
+  .entries-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-    #progressText {
-        font-size: 22px;
-    }
+  .entries-filter-buttons {
+    gap: 8px;
+  }
 
-    /* ---------------------------
-        Navbar / header
-    ----------------------------*/
-    .nav-links {
-        display: none; /* hide long navbar on mobile */
-    }
+  /* Achievements */
+  .achievements-list {
+    grid-template-columns: 1fr;
+  }
 
-    .brand span {
-        font-size: 22px !important;
-    }
+  .achv-card {
+    padding: 10px;
+  }
+}
 
-    /* ---------------------------
-        Modals
-    ----------------------------*/
-    .journal-modal-dialog {
-        width: 90% !important;
-        max-width: 350px !important;
-    }
+/* ============================================
+   📱 SMALL PHONES (max-width: 480px)
+   ============================================ */
+@media (max-width: 480px) {
+
+  .journal-container {
+    width: 94%;
+    padding: 14px;
+  }
+
+  .journal-header-top h1 {
+    font-size: 1.25rem;
+  }
+
+  .rating-stars button {
+    width: 26px;
+    height: 26px;
+  }
+
+  .note-area {
+    min-height: 120px;
+  }
+
+  .entry {
+    font-size: 0.8rem;
+  }
+}
+/* =========================================================
+   📱 MOBILE NAVBAR FIXES
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* Reduce padding for smaller header */
+  .nav {
+    padding-block: 8px;
+    gap: 10px;
+  }
+
+  /* Brand text smaller */
+  .brand {
+    font-size: 16px;
+    gap: 6px;
+  }
+
+  .brand-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Stack nav links into a scrollable horizontal list */
+  .nav-links {
+    font-size: 0.85rem;
+    gap: 10px;
+
+    overflow-x: auto;       /* Prevents overflow cutting */
+    white-space: nowrap;    /* Keep links on one line */
+    padding-bottom: 4px;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for clean look */
+  }
+
+  /* Make links easier to tap */
+  .nav-links a {
+    padding: 6px 4px;
+    font-size: 0.83rem;
+  }
+
+  /* Make underline animation visible on small screens */
+  .nav-links a::after {
+    bottom: 0;
+    height: 2px;
+  }
+}
+
+/* =========================================================
+   📱 VERY SMALL PHONES (≤ 480px)
+   ========================================================= */
+@media (max-width: 480px) {
+
+  .nav {
+    flex-direction: column; /* Stack brand + links */
+    align-items: center;
+    gap: 6px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .brand {
+    font-size: 15px;
+  }
+
+  .brand-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+/* =========================================================
+   📱 MOBILE RESPONSIVE FIXES — INDEX / WELCOME PAGE
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* ================= HERO SECTION ================= */
+
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-block: 20px 30px;
+    text-align: center;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+    justify-self: center;
+  }
+
+  .hero-heading {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtext {
+    margin: 0 auto 14px;
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+
+  .hero-main-actions {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  /* ================= MOOD ORB FIXES ================= */
+
+  .hero-visual {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mood-orb {
+    width: 75%;
+    max-width: 260px;
+    margin-inline: auto;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+  }
+
+  .mood-orb-image {
+    width: 75%;
+  }
+
+  .mood-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ================= FEATURE GRID ================= */
+
+  .features h2 {
+    font-size: 1.6rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .feature {
+    padding: 16px;
+  }
+
+  /* ================= FLOW SECTION ================= */
+
+  .flow-step {
+    grid-template-columns: 1fr;
+    padding: 12px 14px;
+    text-align: center;
+  }
+
+  .step-number {
+    margin-inline: auto;
+  }
+
+  .step-body p {
+    font-size: 0.9rem;
+  }
+
+  /* ================= WHY ANAH ================= */
+
+  .why-anah h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-card {
+    padding: 16px;
+    text-align: center;
+  }
+
+  /* ================= ABOUT SECTION ================= */
+
+  .about-title {
+    font-size: 1.7rem;
+  }
+
+  .about-sub {
+    font-size: 0.95rem;
+    width: 90%;
+    margin-inline: auto;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    padding: 16px;
+  }
+
+  /* ================= BACK TO TOP ================= */
+
+  .back-top {
+    bottom: 18px;
+    left: 18px;
+    padding: 10px 12px;
+  }
 }
 /* =========================================================
    KEYFRAMES
