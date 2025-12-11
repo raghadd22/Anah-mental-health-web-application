@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>أناه | المذكرة اليومية</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- ===========================
+         Google Fonts: Tajawal
+    =========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ===========================
+         Icon Libraries
+    =========================== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Flaticon Solid Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css"
+    />
+  </head>
+  <body class="page-journal has-animated-bg">
+
+    <!-- ===========================
+         Background Animated Blobs
+    =========================== -->
+    <div class="bg-blobs">
+      <div class="blob mint"></div>
+      <div class="blob peach"></div>
+      <div class="blob purple"></div>
+    </div>
+
+    <!-- ===========================
+         Site Header & Navigation
+    =========================== -->
+    <header class="site-header">
+      <div class="shell">
+        <nav class="nav">
+          <!-- Brand Logo -->
+          <a href="index.html" class="brand">
+            <img src="images/anah.jpeg" alt="anah logo" class="brand-icon" />
+            <span>أناه</span>
+          </a>
+          <!-- Navigation Links -->
+          <ul class="nav-links">
+            <li><a href="home.html" class="anim-underline">الرئيسية</a></li>
+            <li>
+              <a href="journal.html" class="active anim-underline">اليوميات</a>
+            </li>
+            <li>
+              <a href="analyze.html" class="anim-underline">تحليل المزاج</a>
+            </li>
+          </ul>
+          <!-- Auth Button -->
+          <a
+            id="authButton"
+            href="SignOrLogin.html"
+            class="pill-button pill-ghost"
+          >
+            تسجيل / دخول
+          </a>
+        </nav>
+      </div>
+    </header>
+    
+    <!-- ===========================
+         Main Content Area
+    =========================== -->
+    <main class="shell journal-main journal-container">
+      <!-- ===== Page Header ===== -->
+      <header class="journal-header-top">
+        <div>
+          <p class="eyebrow">المذكرة اليومية</p>
+          <h1>مساحتك لكتابة يومك، بهدوء.</h1>
+          <p class="journal-lead">
+            اكتب ما حدث معك اليوم، قيّم شعورك، وارجع لمذكراتك في أي وقت تحب.
+          </p>
+        </div>
+        <!-- Today's Date -->
+        <div class="journal-meta-chip">
+          <span>اليوم:</span>
+          <span id="journal-today"></span>
+        </div>
+      </header>
+
+      <!-- ===========================
+           Split Layout (Sidebar + Editor)
+      =========================== -->
+      <section class="journal-split-layout slide-right">
+
+        <!-- ===========================
+             Sidebar
+        =========================== -->
+        <aside class="journal-sidebar">
+          <!-- ===== Mood Rating Card ===== -->
+          <section class="journal-card rating-card">
+            <h2>قيّم شعورك اليوم</h2>
+
+            <!-- Rating Stars -->
+            <div id="rating" class="rating-stars">
+              <button type="button" data-v="1">★</button>
+              <button type="button" data-v="2">★</button>
+              <button type="button" data-v="3">★</button>
+              <button type="button" data-v="4">★</button>
+              <button type="button" data-v="5">★</button>
+            </div>
+
+            <!-- Rating Display Text -->
+            <div id="ratingText" class="rating-text">قيّم يومك: 0/5</div>
+          </section>
+
+          <!-- ===== Writing Streak Card ===== -->
+          <section class="journal-card streak-card">
+            <h2>سلسلة الكتابة</h2>
+
+            <!-- Current Streak -->
+            <div class="streak-row">
+              <span>أيام متتالية</span>
+              <strong id="curStreak">0</strong>
+            </div>
+            <!-- Best Streak -->
+            <div class="streak-row">
+              <span>أفضل سلسلة</span>
+              <strong id="bestStreak">0</strong>
+            </div>
+          </section>
+
+          <!-- Achievements Toggle Button -->
+          <button id="showAchv" class="journal-link-btn">
+            <i class="fi fi-sr-trophy"></i>
+            عرض الإنجازات
+          </button>
+
+          <!-- ===== Achievements List ===== -->
+          <section
+            id="achievements"
+            class="journal-card achievements-card"
+            hidden
+          >
+            <h2>إنجازاتك</h2>
+            <div id="achvList" class="achievements-list">
+              <!-- Achievement Item -->
+              <div class="achv-card" id="achv-1">
+                <div class="achv-content">
+                  <span class="achv-icon">🔒</span>
+                  <div class="achv-text">
+                    <strong>بداية الرحلة</strong>
+                    <small>كتابة أول مذكرة</small>
+                  </div>
+                </div>
+                <span class="achv-badge">مغلق</span>
+              </div>
+
+              <div class="achv-card" id="achv-2">
+                <div class="achv-content">
+                  <span class="achv-icon">🔒</span>
+                  <div class="achv-text">
+                    <strong>حماس</strong>
+                    <small>3 أيام متتالية</small>
+                  </div>
+                </div>
+                <span class="achv-badge">مغلق</span>
+              </div>
+
+              <div class="achv-card" id="achv-3">
+                <div class="achv-content">
+                  <span class="achv-icon">🔒</span>
+                  <div class="achv-text">
+                    <strong>كاتب نشيط</strong>
+                    <small>5 مذكرات إجمالاً</small>
+                  </div>
+                </div>
+                <span class="achv-badge">مغلق</span>
+              </div>
+
+              <div class="achv-card" id="achv-4">
+                <div class="achv-content">
+                  <span class="achv-icon">🔒</span>
+                  <div class="achv-text">
+                    <strong>أسبوع كامل</strong>
+                    <small>7 أيام متتالية</small>
+                  </div>
+                </div>
+                <span class="achv-badge">مغلق</span>
+              </div>
+            </div>
+          </section>
+        </aside>
+
+        <!-- ===========================
+             Journal Editor Panel
+        =========================== -->
+        <section class="journal-editor-panel">
+          <section class="journal-card editor-card">
+            <!-- Editor Header -->
+            <header class="editor-header">
+              <div>
+                <h2>مذكرتك لليوم</h2>
+                <p class="editor-hint">
+                  يمكنك كتابة مذكرة واحدة لكل يوم. في حال حفظ أكثر من مذكرة في
+                  اليوم نفسه، سيتم الاحتفاظ بآخر نسخة فقط.
+                </p>
+              </div>
+            </header>
+
+            <!-- Note Info Section -->
+            <div class="note-info" id="noteInfo">
+              <i class="fi fi-sr-info"></i>
+              <p>
+                حرصًا على دقة تحليل مشاعرك، يُفضّل كتابة
+                <strong>مذكرة واحدة يوميًا</strong>. بعد الحفظ، سيظهر لك تحليل
+                سريع لمشاعرك في هذه المساحة.
+              </p>
+            </div>
+
+            <!-- Note Input Area -->
+            <label class="sr-only" for="note">مذكرتك</label>
+            <textarea
+              id="note"
+              class="note-area"
+              placeholder="اكتب عن يومك، ما الذي حدث؟ كيف كان شعورك في المواقف المختلفة؟"
+            ></textarea>
+
+            <!-- Editor Action Buttons -->
+            <div class="editor-actions">
+              <div class="editor-actions-left">
+                <button id="save" class="pill-button pill-primary">
+                  حفظ المذكرة
+                </button>
+                <button id="clearToday" class="pill-button pill-ghost">
+                  مسح مذكرة اليوم
+                </button>
+              </div>
+              <button id="showAll" class="journal-link-btn">
+                <i class="fa-regular fa-folder-open"></i>
+                عرض كل المذكرات
+              </button>
+            </div>
+          </section>
+        </section>
+      </section>
+
+       <!-- ===========================
+           All Entries Section
+      =========================== -->
+      <section id="allEntries" class="journal-card all-entries-card" hidden>
+        <header class="all-entries-header">
+          <h2>كل مذكراتك</h2>
+          <p>اضغط على أي يوم لعرض المذكرة كاملة.</p>
+
+          <!-- Rating Filter -->
+          <div class="entries-filters">
+            <span class="entries-filters-label">تصفية حسب التقييم:</span>
+            <div class="entries-filter-buttons" id="ratingFilter">
+              <button
+                type="button"
+                class="rating-filter is-active"
+                data-rating="all"
+              >
+                الكل
+              </button>
+              <button type="button" class="rating-filter" data-rating="5">
+                5 نجوم
+              </button>
+              <button type="button" class="rating-filter" data-rating="4">
+                4 نجوم
+              </button>
+              <button type="button" class="rating-filter" data-rating="3">
+                3 نجوم
+              </button>
+              <button type="button" class="rating-filter" data-rating="2">
+                2 نجوم
+              </button>
+              <button type="button" class="rating-filter" data-rating="1">
+                1 نجمة
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Entries List -->
+        <div id="entries" class="entries-list"></div>
+      </section>
+    </main>
+
+    <!-- ===========================
+         Modals
+    =========================== -->
+
+    <!-- View Entry Modal -->
+    <div id="viewModal" class="journal-modal" hidden>
+      <div class="journal-modal-dialog">
+        <button id="closeModal" class="journal-modal-close" aria-label="إغلاق">
+          ×
+        </button>
+        <div id="viewContent" class="journal-modal-content"></div>
+      </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteConfirmModal" class="journal-modal" hidden>
+      <div class="journal-modal-dialog confirm-dialog">
+        <h3 class="modal-title">هل أنت متأكد؟</h3>
+        <p class="modal-desc">
+          سيتم حذف مذكرة اليوم نهائياً ولا يمكن استعادتها.
+        </p>
+        <div class="modal-actions">
+          <button
+            id="confirmDeleteBtn"
+            class="pill-button pill-primary btn-danger"
+          >
+            نعم، احذفها
+          </button>
+          <button id="cancelDeleteBtn" class="pill-button pill-ghost">
+            تراجع
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty Note Warning Modal -->
+    <div id="emptyNoteModal" class="journal-modal" hidden>
+      <div class="journal-modal-dialog empty-dialog">
+        <div class="modal-icon">✍️</div>
+        <h3 class="modal-title">مذكرة فارغة!</h3>
+        <p class="modal-desc">
+          لا يمكن حفظ صفحة بيضاء.<br />اكتبي شيئاً بسيطاً عن يومك أولاً.
+        </p>
+        <button
+          id="closeEmptyNoteModal"
+          class="pill-button pill-primary btn-full"
+        >
+          حسناً، سأكتب
+        </button>
+      </div>
+    </div>
+
+    <!-- ===========================
+         Footer
+    =========================== -->
+    <footer class="site-footer">
+      <div class="shell footer-row">
+        <div class="footer-left">
+          <a href="index.html" class="brand">
+            <img src="images/anah.jpeg" alt="anah logo" class="brand-icon" />
+            <span>أناه</span>
+          </a>
+          <span class="footer-copy"> © <span id="year"></span> أناه </span>
+          <span class="footer-tagline"> مساحة صغيرة تهتم بمشاعرك بلطف. </span>
+        </div>
+
+        <nav class="footer-links">
+          <a href="#about">عن أناه</a>
+          <span class="footer-dot">·</span>
+          <a href="#features">المزايا</a>
+          <span class="footer-dot">·</span>
+          <a href="team.html">فريق أناه</a>
+        </nav>
+      </div>
+    </footer>
+
+     <!-- ===========================
+         JavaScript Files
+    =========================== -->
+    <script src="utils.js"></script>
+    <script src="lexicon-analyzer.js"></script>
+    <script src="journal.js"></script>
+    <script src="home.js"></script>
+  </body>
+</html>

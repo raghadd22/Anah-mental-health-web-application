@@ -1,0 +1,5 @@
+model,dev_accuracy,dev_f1,test_accuracy,test_f1
+aubmindlab/bert-base-arabertv02,0.8814,0.8858,0.8715,0.876
+aubmindlab/bert-base-arabertv02-twitter,0.9011,0.9046,0.8906,0.8943
+asafaya/bert-base-arabic,0.874,0.8783,0.8702,0.8748
+UBC-NLP/MARBERTv2,0.911,0.9146,0.917,0.9201
