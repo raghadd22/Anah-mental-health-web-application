@@ -3682,6 +3682,132 @@ font-size: 2rem;
   }
 }
 
+@media (max-width: 600px) {
+
+    /* ---------------------------
+        General layout fixes
+    ----------------------------*/
+    body {
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    .auth-split {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .auth-card {
+        width: 100% !important;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .auth-image-panel {
+        display: none; /* hide big GIF on phones */
+    }
+
+    /* ---------------------------
+        Forms (login/signup)
+    ----------------------------*/
+    .field .input input {
+        font-size: 16px !important;
+        padding: 12px !important;
+    }
+
+    .auth-btn-main {
+        font-size: 18px;
+        padding: 12px;
+        width: 100%;
+    }
+
+    /* ---------------------------
+        Home page layout
+    ----------------------------*/
+    .home-container {
+        padding: 10px !important;
+    }
+
+    .section {
+        margin: 15px 0 !important;
+    }
+
+    .dashboard-card,
+    .journal-card {
+        width: 100% !important;
+        margin: 10px 0 !important;
+    }
+
+    /* ---------------------------
+        Journal page
+    ----------------------------*/
+    #note {
+        width: 100% !important;
+        height: 180px !important;
+        font-size: 15px;
+    }
+
+    .journal-actions {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* ---------------------------
+        Checklist page (tasks)
+    ----------------------------*/
+    .task-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .task-actions {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .task-actions button {
+        flex: 1;
+        margin: 5px 0;
+    }
+
+    #newTaskContainer {
+        width: 100% !important;
+    }
+
+    /* Progress ring resizing */
+    .progress-ring {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    #progressText {
+        font-size: 22px;
+    }
+
+    /* ---------------------------
+        Navbar / header
+    ----------------------------*/
+    .nav-links {
+        display: none; /* hide long navbar on mobile */
+    }
+
+    .brand span {
+        font-size: 22px !important;
+    }
+
+    /* ---------------------------
+        Modals
+    ----------------------------*/
+    .journal-modal-dialog {
+        width: 90% !important;
+        max-width: 350px !important;
+    }
+}
 /* =========================================================
    KEYFRAMES
    ========================================================= */
